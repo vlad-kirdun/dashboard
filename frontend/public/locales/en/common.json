@@ -1,0 +1,17 @@
+{
+  "app_title": "Admin Panel",
+  "languages": {
+    "en": {
+      "code": "EN",
+      "label": "English"
+    },
+    "ru": {
+      "code": "РУ",
+      "label": "Русский"
+    },
+    "uk": {
+      "code": "УК",
+      "label": "Українська"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Панель керування",
+  "tables": {
+    "users": {
+      "title": "Користувачі",
+      "filters": {
+        "role": {
+          "label": "Фільтр за роллю:",
+          "values": {
+            "all": "Всі",
+            "admin": "Адмін",
+            "editor": "Редактор",
+            "viewer": "Глядач"
+          }
+        }
+      },
+      "columns": {
+        "name": "Ім'я",
+        "email": "Ел.пошта",
+        "role": "Роль",
+        "created_at": "Створений"
+      },
+      "pagination": {
+        "per_page_label": "Показати по:",
+        "page_label": "Сторінка {{page}} з {{total}}",
+        "prev": "Попередня",
+        "next": "Наступна"
+      }
+    },
+    "placeholder": "Немає записів"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Панель управления",
+  "tables": {
+    "users": {
+      "title": "Пользователи",
+      "filters": {
+        "role": {
+          "label": "Фильтр по роли:",
+          "values": {
+            "all": "Все",
+            "admin": "Админ",
+            "editor": "Редактор",
+            "viewer": "Зритель"
+          }
+        }
+      },
+      "columns": {
+        "name": "Имя",
+        "email": "Эл.почта",
+        "role": "Роль",
+        "created_at": "Создан"
+      },
+      "pagination": {
+        "per_page_label": "Показывать по:",
+        "page_label": "Страница {{page}} из {{total}}",
+        "prev": "Предыдущая",
+        "next": "Следующая"
+      }
+    },
+    "placeholder": "Нет записей"
+  }
+}

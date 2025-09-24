@@ -1,0 +1,33 @@
+{
+  "title": "Dashboard",
+  "tables": {
+    "users": {
+      "title": "Users",
+      "filters": {
+        "role": {
+          "label": "Filter by role:",
+          "values": {
+            "all": "All",
+            "admin": "Admin",
+            "editor": "Editor",
+            "viewer": "Viewer"
+          }
+        }
+      },
+      "columns": {
+        "id": "ID",
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "created_at": "Created"
+      },
+      "pagination": {
+        "per_page_label": "Show by:",
+        "page_label": "Page {{page}} of {{total}}",
+        "prev": "Prev",
+        "next": "Next"
+      }
+    },
+    "placeholder": "No entries"
+  }
+}
