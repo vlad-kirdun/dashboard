@@ -21,11 +21,12 @@ export class AuthController {
 
 	private cookieOptions(maxAge: number) {
 		const isProduction = this.configService.get('app.nodeEnv') === NodeEnv.Production;
+		const sameSite = isProduction ? ('none' as const) : ('strict' as const);
 
 		return {
 			httpOnly: true,
 			secure: isProduction,
-			sameSite: 'strict' as const,
+			sameSite,
 			maxAge,
 		};
 	}
@@ -104,13 +105,13 @@ export class AuthController {
 		res.clearCookie('jwt', {
 			httpOnly: true,
 			secure: isProduction,
-			sameSite: 'strict',
+			sameSite: isProduction ? 'none' : 'strict',
 		});
 
 		res.clearCookie('refresh', {
 			httpOnly: true,
 			secure: isProduction,
-			sameSite: 'strict',
+			sameSite: isProduction ? 'none' : 'strict',
 		});
 
 		return { success: true };
