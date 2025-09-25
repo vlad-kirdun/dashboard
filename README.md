@@ -13,6 +13,9 @@ Main features:
 - Internationalization: English, Russian, Ukrainian
 - Theme toggle (dark/light)
 
+## Architecture
+Feature-Sliced Design (FSD) for scalable frontend structure
+
 ## Technologies
 
 ### Frontend
@@ -102,6 +105,10 @@ npm run dev
 
 ## Deployment
 
-- **Frontend:** [Vercel](#)
-- **Backend:** [Render](#)
-- **Swagger API:** [Render Swagger](#)  
+- **Frontend:** [Vercel](https://dashboard-gray-one-49.vercel.app/)
+- **Backend:** [Render](https://dashboard-backend-cu7h.onrender.com)
+- **Swagger API:** [Render Swagger](https://dashboard-backend-cu7h.onrender.com/api)  
+
+| Login                                                | Dashboard                             |
+|------------------------------------------------------|---------------------------------------|
+| ![Login Page](frontend/public/screenshots/login.png) | ![Dashboard page](frontend/public/screenshots/dashboard.png) |
