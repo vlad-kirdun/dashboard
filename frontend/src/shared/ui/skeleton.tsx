@@ -9,5 +9,5 @@ type Props =
 	| undefined;
 
 export const Skeleton: FunctionComponent<Props> = ({ className } = {}) => (
-	<div className={classNames('h-4 w-4 bg-gray-200 rounded', className)} />
+	<div className={classNames('w-4 h-4 bg-primary-hover shadow-md rounded animate-pulse', className)} />
 );

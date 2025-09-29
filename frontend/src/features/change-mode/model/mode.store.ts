@@ -21,7 +21,16 @@ const initialState: State = {
 
 const modeStore: StateCreator<ModeState, [['zustand/devtools', never], ['zustand/persist', unknown]]> = (set) => ({
 	...initialState,
-	setMode: (newMode) => set(() => ({ mode: newMode }), false, 'setMode'),
+	setMode: (newMode) =>
+		set(
+			() => {
+				document.documentElement.setAttribute('data-theme', newMode === Mode.Dark ? Mode.Dark : Mode.Light);
+
+				return { mode: newMode };
+			},
+			false,
+			'setMode',
+		),
 });
 
 const useModeStore = create<ModeState>()(
@@ -30,6 +39,11 @@ const useModeStore = create<ModeState>()(
 			name: 'mode-storage',
 			storage: createJSONStorage(() => localStorage),
 			partialize: (state) => ({ mode: state.mode }),
+			onRehydrateStorage: () => (state) => {
+				if (state) {
+					document.documentElement.setAttribute('data-theme', state.mode === Mode.Dark ? Mode.Dark : Mode.Light);
+				}
+			},
 		}),
 	),
 );

@@ -39,10 +39,10 @@ export const SortableTableHeadCell: FunctionComponent<Props> = ({
 				{children}
 				<div className="flex flex-col">
 					<ChevronUpIcon
-						className={`h-3 w-3 -mb-0.5 ${sortBy === columnName && order === Order.Asc ? 'text-gray-500' : 'text-gray-300'}`}
+						className={`h-3 w-3 -mb-0.5 ${sortBy === columnName && order === Order.Asc ? 'text-text-primary' : 'text-text-secondary opacity-40'}`}
 					/>
 					<ChevronDownIcon
-						className={`h-3 w-3 -mt-0.5 ${sortBy === columnName && order === Order.Desc ? 'text-gray-500' : 'text-gray-300'}`}
+						className={`h-3 w-3 -mt-0.5 ${sortBy === columnName && order === Order.Desc ? 'text-text-primary' : 'text-text-secondary opacity-40'}`}
 					/>
 				</div>
 			</div>

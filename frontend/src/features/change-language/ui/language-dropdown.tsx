@@ -17,7 +17,7 @@ export const LanguageDropdown: FunctionComponent = () => {
 
 	return (
 		<Menu as="div" className="relative">
-			<MenuButton className="cursor-pointer flex items-center rounded-md border border-gray-300 bg-white dark:bg-gray-800 px-3 py-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
+			<MenuButton className="min-w-[70px] cursor-pointer flex items-center justify-end rounded-md bg-primary hover:bg-primary-hover border border-tertiary px-3 py-1 text-sm font-medium text-text-primary focus:outline-none">
 				{t(`languages.${language}.code`)} <ChevronDownIcon className="ml-1 h-4 w-4" />
 			</MenuButton>
 
@@ -30,7 +30,7 @@ export const LanguageDropdown: FunctionComponent = () => {
 				leaveFrom="transform opacity-100 scale-100"
 				leaveTo="transform opacity-0 scale-95"
 			>
-				<MenuItems className="absolute right-0 mt-2 w-24 origin-top-right divide-y divide-gray-100 rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+				<MenuItems className="absolute right-0 mt-2 origin-top-right rounded-md bg-primary border border-tertiary shadow-md focus:outline-none z-50">
 					<div className="p-1">
 						{Object.values(Lang).map((lang) => (
 							<LanguageDropdownItem key={lang} lang={lang} />

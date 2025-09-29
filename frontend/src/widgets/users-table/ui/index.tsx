@@ -82,38 +82,38 @@ export const UsersTable: FunctionComponent = () => {
 	return (
 		<>
 			<div className="flex items-center justify-between mb-4">
-				<h2 className="text-xl font-semibold">{t('tables.users.title')}</h2>
+				<h2 className="text-xl font-semibold text-text-primary">{t('tables.users.title')}</h2>
 
 				<UsersRoleFilter onChange={handleChangeRoleCallback} />
 			</div>
 
-			<div className="bg-white shadow rounded-md sm:rounded-lg overflow-hidden">
+			<div className="bg-primary shadow-lg divide-y divide-secondary rounded-md sm:rounded-lg overflow-hidden">
 				<div className="relative">
 					<div ref={scrollContainerRef} className="overflow-x-auto">
-						<table className="min-w-full divide-y divide-gray-200">
-							<thead className="bg-gray-50">
+						<table className="min-w-full divide-y divide-secondary">
+							<thead>
 								<tr>
 									<SortableTableHeadCell
 										columnName={SortBy.Name}
 										disabled={isUsersLoading}
-										className="w-2/5"
+										className="min-w-[360px]"
 										onChange={handleChangeSortCallback}
 									>
 										{t('tables.users.columns.name')}
 									</SortableTableHeadCell>
-									<TableHeadCell className="w-1/5">{t('tables.users.columns.email')}</TableHeadCell>
-									<TableHeadCell className="w-1/5 min-w-[280px]">{t('tables.users.columns.role')}</TableHeadCell>
+									<TableHeadCell className="min-w-[240px]">{t('tables.users.columns.email')}</TableHeadCell>
+									<TableHeadCell className="min-w-[290px]">{t('tables.users.columns.role')}</TableHeadCell>
 									<SortableTableHeadCell
 										columnName={SortBy.CreatedAt}
 										disabled={isUsersLoading}
-										className="text-right w-1/5"
+										className="text-right min-w-[160px]"
 										onChange={handleChangeSortCallback}
 									>
 										{t('tables.users.columns.created_at')}
 									</SortableTableHeadCell>
 								</tr>
 							</thead>
-							<tbody className="bg-white divide-y divide-gray-200">
+							<tbody>
 								{isUsersLoading ? (
 									<TableSkeleton rows={perPage} />
 								) : !isUsersLoading && !users?.data?.length ? (
@@ -124,7 +124,7 @@ export const UsersTable: FunctionComponent = () => {
 									</tr>
 								) : (
 									users?.data?.map((row) => (
-										<tr key={row.id} className="hover:bg-gray-50">
+										<tr key={row.id} className="hover:bg-primary-hover">
 											<TableBodyCell>
 												<Name user={row} />
 											</TableBodyCell>

@@ -14,10 +14,10 @@ export const Role: FunctionComponent<Props> = ({ role }) => {
 
 	return (
 		<span
-			className={classNames('px-2 inline-flex text-xs leading-5 font-semibold rounded-full', {
-				'bg-gray-100 text-gray-800': role === RoleCode.Admin,
-				'bg-blue-100 text-blue-800': role === RoleCode.Editor,
-				'bg-green-100 text-green-800': role === RoleCode.Viewer,
+			className={classNames('px-2 inline-flex text-xs leading-5 font-medium rounded-full', {
+				'bg-danger text-text-danger': role === RoleCode.Admin,
+				'bg-info text-text-info': role === RoleCode.Editor,
+				'bg-success text-text-success': role === RoleCode.Viewer,
 			})}
 		>
 			{t(`tables.users.filters.role.values.${role.toLowerCase()}`)}

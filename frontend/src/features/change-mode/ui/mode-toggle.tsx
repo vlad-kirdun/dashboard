@@ -11,10 +11,7 @@ export const ModeToggle: FunctionComponent = () => {
 	const handleClick = () => setDarkMode(!darkMode);
 
 	return (
-		<Button
-			onClick={handleClick}
-			className="rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer outline-0"
-		>
+		<Button onClick={handleClick} className="rounded-full p-2 hover:bg-primary-hover cursor-pointer outline-0">
 			{darkMode ? <SunIcon className="h-5 w-5 text-yellow-400" /> : <MoonIcon className="h-5 w-5 text-indigo-600" />}
 		</Button>
 	);

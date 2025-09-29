@@ -12,21 +12,21 @@ export const TableSkeleton: FunctionComponent<Props> = ({ rows }) => (
 			<tr key={i} className="animate-pulse">
 				<TableBodyCell>
 					<div className="flex items-center gap-3">
-						<Skeleton className="h-8 w-8 rounded-full" />
-						<div>
+						<Skeleton className="w-8 h-8 rounded-full" />
+						<div className="flex-1">
 							<Skeleton className="w-32 mb-2" />
-							<Skeleton className="h-3 w-20 bg-gray-100 rounded" />
+							<Skeleton className="w-full h-3!" />
 						</div>
 					</div>
 				</TableBodyCell>
 				<TableBodyCell>
-					<Skeleton className="w-40" />
+					<Skeleton className="w-full" />
 				</TableBodyCell>
 				<TableBodyCell>
-					<Skeleton className="w-24" />
+					<Skeleton className="w-full" />
 				</TableBodyCell>
 				<TableBodyCell>
-					<Skeleton className="w-16 ml-auto" />
+					<Skeleton className="w-full ml-auto" />
 				</TableBodyCell>
 			</tr>
 		))}

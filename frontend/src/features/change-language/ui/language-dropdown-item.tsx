@@ -1,4 +1,5 @@
 import { Button, MenuItem } from '@headlessui/react';
+import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import { Lang } from '@/shared/constants';
@@ -20,9 +21,9 @@ export const LanguageDropdownItem: FunctionComponent<Props> = ({ lang }) => {
 		<MenuItem>
 			{({ focus }) => (
 				<Button
-					className={`${
-						focus ? 'bg-gray-100 dark:bg-gray-700' : ''
-					} block w-full rounded px-2 py-1 text-left text-sm text-gray-700 dark:text-gray-200 cursor-pointer`}
+					className={classNames('block w-full rounded px-2 py-1 text-left text-sm text-text-primary cursor-pointer', {
+						'bg-primary-hover': focus,
+					})}
 					onClick={handleClick}
 				>
 					{t(`languages.${lang}.label`)}

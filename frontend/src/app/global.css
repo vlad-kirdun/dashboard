@@ -1,1 +1,86 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../shared/assets/fonts/Montserrat-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../shared/assets/fonts/Montserrat-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../shared/assets/fonts/Montserrat-Semibold.ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../shared/assets/fonts/Montserrat-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  * {
+    @apply transition-colors duration-300 ease-in-out;
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+@theme {
+  --color-primary: var(--color-white);
+  --color-primary-hover: var(--color-slate-100);
+  --color-secondary: var(--color-slate-200);
+  --color-tertiary: var(--color-slate-300);
+
+  --color-text-primary: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-600);
+  --color-text-tertiary: var(--color-slate-300);
+
+  --color-accent: var(--color-indigo-600);
+  --color-accent-hover: var(--color-indigo-800);
+
+  --color-success: var(--color-green-100);
+  --color-text-success: var(--color-green-800);
+  --color-info: var(--color-blue-100);
+  --color-text-info: var(--color-blue-800);
+  --color-danger: var(--color-red-100);
+  --color-danger-hover: var(--color-red-200);
+  --color-text-danger: var(--color-red-800);
+}
+
+[data-theme=dark] {
+  --color-primary: var(--color-slate-900);
+  --color-primary-hover: var(--color-slate-700);
+  --color-secondary: var(--color-slate-800);
+  --color-tertiary: var(--color-slate-600);
+
+  --color-text-primary: var(--color-slate-100);
+  --color-text-secondary: var(--color-slate-400);
+  --color-text-tertiary: var(--color-slate-600);
+
+  --color-accent: var(--color-indigo-600);
+  --color-accent-hover: var(--color-indigo-400);
+
+  --color-success: var(--color-green-900);
+  --color-text-success: var(--color-green-100);
+  --color-info: var(--color-blue-900);
+  --color-text-info: var(--color-blue-100);
+  --color-danger: var(--color-red-900);
+  --color-danger-hover: var(--color-red-800);
+  --color-text-danger: var(--color-red-100);
+}

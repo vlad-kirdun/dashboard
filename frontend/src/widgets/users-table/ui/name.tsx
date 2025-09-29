@@ -15,7 +15,7 @@ export const Name: FunctionComponent<Props> = ({ user }) => {
 
 	return (
 		<div className="flex items-center gap-3">
-			<div className="h-8 w-8 bg-gray-200 rounded-full flex items-center justify-center text-xs font-semibold text-gray-700">
+			<div className="h-8 w-8 shadow-md bg-secondary rounded-full flex items-center justify-center text-xs font-semibold text-text-primary">
 				{fullName
 					.split(' ')
 					.map((n) => n[0])
@@ -23,8 +23,8 @@ export const Name: FunctionComponent<Props> = ({ user }) => {
 					.join('')}
 			</div>
 			<div>
-				<div className="text-sm font-semibold text-gray-900">{fullName}</div>
-				<div className="text-xs text-gray-500">
+				<div className="text-sm font-semibold text-text-primary">{fullName}</div>
+				<div className="text-xs text-text-secondary">
 					{t('tables.users.columns.id')}: {user.id}
 				</div>
 			</div>

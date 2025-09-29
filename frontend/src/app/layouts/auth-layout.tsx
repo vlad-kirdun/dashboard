@@ -13,7 +13,7 @@ export const AuthLayout: FunctionComponent = () => {
 
 	if (isLoading) {
 		return (
-			<div className="flex flex-1 justify-center items-center bg-gray-50">
+			<div className="flex flex-1 justify-center items-center">
 				<Spinner size={48} />
 			</div>
 		);
@@ -24,7 +24,7 @@ export const AuthLayout: FunctionComponent = () => {
 	}
 
 	return (
-		<div className="flex flex-1 justify-center items-center bg-gray-50">
+		<div className="flex flex-1 justify-center items-center">
 			<Outlet />
 		</div>
 	);

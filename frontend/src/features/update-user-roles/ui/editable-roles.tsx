@@ -46,23 +46,18 @@ export const EditableRoles: FunctionComponent<Props> = ({ userId }) => {
 	return (
 		<Listbox as="div" value={user.roles} onChange={handleChange} multiple>
 			<div className="relative">
-				<ListboxButton
-					className={classNames(
-						'flex items-center gap-1 cursor-pointer outline-0 px-1 py-0.5 rounded-md group',
-						'hover:ring-1 hover:ring-indigo-400 hover:bg-white transition',
-					)}
-				>
+				<ListboxButton className="flex items-center gap-1 cursor-pointer outline-0 px-1 py-0.5 rounded-md group hover:bg-primary hover:ring-1 hover:ring-accent">
 					{[...user.roles]
 						.sort((a, b) => a.localeCompare(b))
 						.map((role) => (
 							<Role key={role} role={role} />
 						))}
 
-					<PencilSquareIcon className="w-4 h-4 text-gray-300" />
+					<PencilSquareIcon className="w-4 h-4 text-text-tertiary" />
 				</ListboxButton>
 
 				<Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
-					<ListboxOptions className="absolute z-10 mt-1 w-40 bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+					<ListboxOptions className="absolute z-10 mt-1 min-w-40 bg-primary shadow-md max-h-60 rounded-md py-1 border border-tertiary overflow-auto focus:outline-none text-sm">
 						{[...allRoles]
 							.sort((a, b) => a.localeCompare(b))
 							.map((role) => {
@@ -75,24 +70,20 @@ export const EditableRoles: FunctionComponent<Props> = ({ userId }) => {
 										value={role}
 										disabled={disabled}
 										className={({ focus }) =>
-											classNames(
-												'select-none relative py-1 px-3',
-												focus && !disabled ? 'bg-indigo-600 text-white' : 'text-gray-900',
-												disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
-											)
+											classNames('select-none relative py-1 px-3 text-text-primary', {
+												'opacity-50 cursor-not-allowed': disabled,
+												'cursor-pointer': !disabled,
+												'bg-primary-hover': focus,
+											})
 										}
 									>
-										{({ selected, focus }) => (
+										{({ selected }) => (
 											<div className="flex items-center justify-between">
-												<span className={selected ? 'font-semibold' : ''}>
+												<span className={selected ? 'font-medium' : ''}>
 													{t(`tables.users.filters.role.values.${role.toLowerCase()}`)}
 												</span>
 
-												{selected && (
-													<CheckIcon
-														className={classNames('w-5 h-5', focus && !disabled ? 'text-white' : 'text-indigo-600')}
-													/>
-												)}
+												{selected ? <CheckIcon className="w-5 h-5 text-text-primary" /> : null}
 											</div>
 										)}
 									</ListboxOption>
